@@ -3,7 +3,7 @@ import { startStandaloneServer } from '@apollo/server/standalone';
 import { buildSubgraphSchema } from '@apollo/subgraph';
 import gql from 'graphql-tag';
 import fs from 'fs';
-import { User, QueryResolvers, UserResolvers } from './types';
+import { Context } from './types';
 
 // Read user data from JSON file
 const users = JSON.parse(fs.readFileSync('src/data/users.json', 'utf8'));
@@ -33,7 +33,7 @@ const resolvers = {
   },
 };
 
-const server = new ApolloServer({
+const server = new ApolloServer<Context>({
   schema: buildSubgraphSchema({ typeDefs, resolvers }),
 });
 

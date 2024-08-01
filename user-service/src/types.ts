@@ -13,3 +13,10 @@ export interface User {
     __resolveReference: (user: { id: string }) => User | undefined;
   }
   
+  import { Request } from 'express';
+
+export interface Context {
+  user?: any; // Replace 'any' with a more specific type for your user object
+}
+
+export type ContextFunction = (req: Request) => Context;
