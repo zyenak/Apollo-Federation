@@ -19,6 +19,8 @@ npx ts-node src/index.ts
 ## Router Commands
 iwr 'https://rover.apollo.dev/win/latest' -UseBasicParsing | iex
 (copy exe router file in apollo router)
+rover subgraph introspect http://localhost:4001 > user-schema.graphql
+rover subgraph introspect http://localhost:4002 > task-schema.graphql
 rover supergraph compose --config ./supergraph.yaml
 router-v1.51.0.exe --supergraph supergraph-schema.graphql
 
