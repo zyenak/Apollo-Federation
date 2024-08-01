@@ -1,0 +1,10 @@
+federation_version: "=2.0.0"
+subgraphs:
+  users:
+    routing_url: http://localhost:4001
+    schema:
+      file: ./user-schema.graphql
+  posts:
+    routing_url: http://localhost:4002
+    schema:
+      file: ./task-schema.graphql
